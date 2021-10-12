@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mepoy\\OneDrive\\Documents\\Commerce_Bank_Project\\Code\\WebApplication3\\CommerceBankApp.csproj",
+      "projectUniqueName": "C:\\Users\\mepoy\\OneDrive\\Documents\\cs415r_f21_groupproject-s1mple\\Code\\WebApplication3\\CommerceBankApp.csproj",
       "projectName": "CommerceBankApp",
-      "projectPath": "C:\\Users\\mepoy\\OneDrive\\Documents\\Commerce_Bank_Project\\Code\\WebApplication3\\CommerceBankApp.csproj",
+      "projectPath": "C:\\Users\\mepoy\\OneDrive\\Documents\\cs415r_f21_groupproject-s1mple\\Code\\WebApplication3\\CommerceBankApp.csproj",
       "packagesPath": "C:\\Users\\mepoy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mepoy\\OneDrive\\Documents\\Commerce_Bank_Project\\Code\\WebApplication3\\obj\\",
+      "outputPath": "C:\\Users\\mepoy\\OneDrive\\Documents\\cs415r_f21_groupproject-s1mple\\Code\\WebApplication3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages"
