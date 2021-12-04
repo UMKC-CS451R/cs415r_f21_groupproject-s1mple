@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
-namespace Commerece.Models
+namespace Commerce.Models
 {
     [Table("Account")]
     public partial class Account

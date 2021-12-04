@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Commerece.Models
+namespace Commerce.Models
 {
     public class NewTrans
     {

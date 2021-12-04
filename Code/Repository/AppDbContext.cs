@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Commerece.Models;
+using Commerce.Models;
 
 #nullable disable
 
-namespace Commerece.Repository
+namespace Commerce.Repository
 {
     public partial class AppDbContext : DbContext
     {

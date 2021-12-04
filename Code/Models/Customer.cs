@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
-namespace Commerece.Models
+namespace Commerce.Models
 {
     [Table("Customer")]
     [Index(nameof(UserId), nameof(AccountNumber), nameof(Ssn), Name = "u_customer", IsUnique = true)]

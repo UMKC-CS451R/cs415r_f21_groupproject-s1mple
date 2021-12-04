@@ -7603,11 +7603,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Geethika Padamati\\Downloads\\Commerece\\Commerece\\Commerece.csproj",
-      "projectName": "Commerece",
-      "projectPath": "C:\\Users\\Geethika Padamati\\Downloads\\Commerece\\Commerece\\Commerece.csproj",
+      "projectUniqueName": "C:\\Users\\Geethika Padamati\\Downloads\\Commerce\\Commerce\\Commerce.csproj",
+      "projectName": "Commerce",
+      "projectPath": "C:\\Users\\Geethika Padamati\\Downloads\\Commerce\\Commerce\\Commerce.csproj",
       "packagesPath": "C:\\Users\\Geethika Padamati\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Geethika Padamati\\Downloads\\Commerece\\Commerece\\obj\\",
+      "outputPath": "C:\\Users\\Geethika Padamati\\Downloads\\Commerce\\Commerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Geethika Padamati\\AppData\\Roaming\\NuGet\\NuGet.Config",
