@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+
+@model IEnumerable<Commerece.Models.Notification>
+
+@{
+    ViewData["Title"] = "notifications";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+<style>
+    .mar-gin {
+        margin-top: 40px;
+    }
+</style>
+
+
+<div class="container mar-gin">
+    <h4>Notifications</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                  Acc Number
+                </th>
+                <th>
+                  Notification Message
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.AccNumber
+                    </td>
+                    <td>
+                        @item.NotificationMessage
+                    </td>
+                    <td>
+                            @*<a asp-action="Edit" asp-route-id="@item.NotificationId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.NotificationId">Details</a> |*@
+                            <a asp-action="Delete" asp-route-id="@item.NotificationId">Delete</a>
+                        </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

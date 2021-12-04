@@ -1,0 +1,73 @@
+﻿@model Commerece.Models.Transaction
+
+@{
+    ViewData["Title"] = "NewTransaction";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+
+<hr />
+  <form asp-action="NewTransaction">
+<div class="row container">
+    @*
+        <div class="col-sm-4 col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="default-01">Account Number</label>
+                <div class="form-control-wrap">
+                    <input type="text" name="AccountNo" required class="form-control" id="default-01" placeholder="Enter Account NUmber">
+                </div>
+            </div>
+        </div>*@
+         <div class="col-sm-4 col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="default-01">Transaction Type</label>
+                <div class="form-control-wrap">
+                    <input type="text" name="TransactionType" required class="form-control" id="default-01" placeholder="Enter Transaction Type">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="default-01">Amount</label>
+                <div class="form-control-wrap">
+                    <input type="number" name="Amount" required class="form-control" id="default-01" placeholder="Enter Amount">
+                </div>
+            </div>
+        </div>
+           <div class="col-sm-4 col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="default-01">Balance</label>
+                <div class="form-control-wrap">
+                    <input type="number" name="Balance" required class="form-control" id="default-01" placeholder="Enter Balance">
+                </div>
+            </div>
+        </div>
+         <div class="col-sm-4 col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="default-01">Location</label>
+                <div class="form-control-wrap">
+                    <input type="text" name="Location" required class="form-control" id="default-01" placeholder="Enter Location">
+                </div>
+            </div>
+        </div>
+           <div class="col-sm-4 col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="default-01">Enter Description </label>
+                <div class="form-control-wrap">
+                    <textarea name="Description" required class="form-control" id="default-01" placeholder="Enter text"></textarea>
+                   </div>
+            </div>
+        </div>
+          <div class="col-sm-4 col-md-6">
+            <div class="form-group">
+           
+                <div class="form-control-wrap">
+             <button type="submit" style="margin-top:10px;" class="btn btn-primary">Submit</button>
+                   </div>
+            </div>
+        </div>
+   
+</div>
+</form>
+
+

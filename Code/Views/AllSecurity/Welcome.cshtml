@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+<style>
+    .mar-gin {
+        margin-top: 40px;
+    }
+</style>
+               <div class="nk-content ">
+                    <div class="container-fluid">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                <div class="nk-block-head nk-block-head-sm">
+                                    <div class="nk-block-between">
+                                        <div class="nk-block-head-content">
+                                            <h3 class="nk-block-title page-title">Commerce Dashboard</h3>
+                                            <div class="nk-block-des text-soft">
+                                                <p>Welcome to Commerce Dashboard.</p>
+                                            </div>
+                                        </div><!-- .nk-block-head-content -->
+                                      
+                                    </div><!-- .nk-block-between -->
+                                </div><!-- .nk-block-head -->
+                                <div class="nk-block">
+                                    <div class="row g-gs">
+                                        <div class="col-lg-7 col-xxl-6">
+                                            <div class="card card-bordered h-100">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group pb-3 g-2">
+                                                        <div class="card-title card-title-sm">
+                                                            <h6 class="title">Login History</h6>
+                                                            <p>How have your users, sessions, bounce rate metrics trended.</p>
+                                                        </div>
+                                                     
+                                                    </div>
+                                       <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 98%;">
+                                             <thead>
+                            <tr>
+                                <th>User ID</th>
+                             
+                                <th>Login Time</th>
+                          
+
+                            </tr>
+                        </thead>
+                                    @if (ViewBag.dat != null)
+                                    {
+                                        foreach (var i in ViewBag.dat)
+                                        {
+                                            @*<div>@i.LoginTime</div>*@
+                                            <tr>
+                                                <td>@i.UserId</td><td>@i.LoginTime</td> 
+                                                </tr>
+                                        }
+                                    }
+                                    </table>
+
+                                                </div>
+                                            </div><!-- .card -->
+                                        </div><!-- .col -->
+                                @*        <div class="col-md-6 col-lg-5 col-xxl-3">
+                                            <div class="card card-bordered h-100">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start pb-3 g-2">
+                                                        <div class="card-title card-title-sm">
+                                                            <h6 class="title">Add Notfication Rules</h6>
+                                                          
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help" data-toggle="tooltip" data-placement="left" title="Users of this month"></em>
+                                                        </div>
+                                                    </div>
+                                                    <form asp-action="setnotfi" method="post">
+                                                    <label>Enter Location    </label>
+                                                   <input name="Location"  class="form-control"/>
+                                                <label>Enter Start Time    </label>
+                                                   <input name="startTime" type="datetime-local" class="form-control"/>
+                                                     <label>Enter End Time    </label>
+                                                   <input name="EndTime" type="datetime-local" class="form-control"/>
+                                                   <button type="submit" class="btn btn-primary" style="margin-top:10px;">Submit</button>
+                                                   </form>
+                                                </div>
+                                            </div><!-- .card -->
+                                        </div><!-- .col -->
+                                *@
+                              
+                      
+                                    </div><!-- .row -->
+                                </div><!-- .nk-block -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+

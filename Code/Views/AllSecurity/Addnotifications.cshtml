@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Addnotifications";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+      <div class="col-md-6 col-lg-5 col-xxl-3">
+                                            <div class="card card-bordered h-100">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start pb-3 g-2">
+                                                        <div class="card-title card-title-sm">
+                                                            <h6 class="title">Add Notfication Rules</h6>
+                                                          
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help" data-toggle="tooltip" data-placement="left" title="Users of this month"></em>
+                                                        </div>
+                                                    </div>
+                                                    <form asp-action="setnotfi" method="post">
+                                                    <label>Enter Location    </label>
+                                                   <input name="Location"  class="form-control" required/>
+                                                <label>Enter Start Time    </label>
+                                                   <input name="startTime" type="datetime-local" class="form-control" required/>
+                                                     <label>Enter End Time    </label>
+                                                   <input name="EndTime" type="datetime-local" class="form-control" required/>
+                                                   <button type="submit" class="btn btn-primary" style="margin-top:10px;">Submit</button>
+                                                   </form>
+                                                </div>
+                                            </div><!-- .card -->
+                                        </div><!-- .col -->
+                         
+

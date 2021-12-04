@@ -1,0 +1,163 @@
+﻿
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Managenofication";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<h1>Managenofication</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@if (ViewBag.status != null)
+{ 
+<table class="table">
+    <thead>
+        <tr>
+            <th>Account Number</th>
+            <th>Location/Time</th>
+             <th>Activate/Deactivate</th>
+        </tr>
+
+    </thead>
+    <tbody>
+       
+        <tr>
+            <td> @ViewBag.AccountNumber</td>
+             <td>@ViewBag.Location </td>
+             <td> 
+                 
+                 @if(ViewBag.Locationstatus==true)
+                 {
+                     <div class="col-md-3 col-sm-6">
+                    <div class="preview-block">
+                                      
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input"  checked id="customSwitch2">
+                            <label class="custom-control-label" for="customSwitch2">Switch</label>
+                        </div>
+                    </div>
+                    </div>
+                }
+                else
+                {
+                      <div class="col-md-3 col-sm-6">
+                                                        <div class="preview-block">
+                                               
+                                                            <div class="custom-control custom-switch">
+                                                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                                <label class="custom-control-label" for="customSwitch1">Switch</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                }
+            </td>
+        </tr>
+            <tr>
+            <td> @ViewBag.AccountNumber</td>
+             <td> @ViewBag.startTime to @ViewBag.EndTime</td>
+              <td> 
+                 
+                 @if(ViewBag.TimeFrame==true)
+                 {
+                     <div class="col-md-3 col-sm-6">
+                    <div class="preview-block">
+                                      
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" checked id="customSwitch3">
+                            <label class="custom-control-label" for="customSwitch3">Switch</label>
+                        </div>
+                    </div>
+                    </div>
+                }
+                else
+                {
+                      <div class="col-md-3 col-sm-6">
+                                                        <div class="preview-block">
+                                               
+                                                            <div class="custom-control custom-switch">
+                                                                <input type="checkbox" class="custom-control-input" id="customSwitch4">
+                                                                <label class="custom-control-label" for="customSwitch4">Switch</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                }
+            </td>
+
+
+
+        </tr>
+    </tbody>
+
+    </table>
+}
+else
+{
+<p>No NotficationRule active</p>    
+}
+
+<script>
+
+$('#customSwitch2').on('change', function()
+{ 
+    $.ajax({
+            type: "GET",
+             url: '@Url.Action("UpdateLocation", "AllSecurity")',
+            data: {},
+             dataType: "json",
+             success: function (result)
+             { 
+             window.location.reload();},
+            error: function ()
+            {}
+         });
+});
+$('#customSwitch3').on('change', function()
+{ 
+    $.ajax({
+            type: "GET",
+             url: '@Url.Action("UpdateTime", "AllSecurity")',
+            data: {},
+             dataType: "json",
+             success: function (result)
+             { 
+             window.location.reload();
+             },
+            error: function ()
+            {}
+         });
+});     
+$('#customSwitch4').on('change', function()
+{ 
+    $.ajax({
+            type: "GET",
+             url: '@Url.Action("DeleteNotficationRule", "AllSecurity")',
+            data: {},
+             dataType: "json",
+             success: function (result)
+             {
+                window.location.href = "/AllSecurity/Addnotifications";
+             },
+            error: function ()
+            {}
+         });
+});
+$('#customSwitch1').on('change', function()
+{ 
+    $.ajax({
+            type: "GET",
+             url: '@Url.Action("DeleteNotficationRule", "AllSecurity")',
+            data: {},
+             dataType: "json",
+             success: function (result)
+             {  
+                   window.location.href = "/AllSecurity/Addnotifications";
+             },
+            error: function ()
+            {}
+         });
+});
+</script>
