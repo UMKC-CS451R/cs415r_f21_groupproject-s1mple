@@ -1,4 +1,4 @@
-using Commerece.Models;
+using Commerce.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,9 +11,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Session;
-using Commerece.Repository;
+using Commerce.Repository;
 
-namespace Commerece
+namespace Commerce
 {
     public class Startup
     {

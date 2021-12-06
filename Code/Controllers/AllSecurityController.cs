@@ -1,12 +1,12 @@
-﻿using Commerece.Models;
-using Commerece.Repository;
+﻿using Commerce.Models;
+using Commerce.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Commerece.Controllers
+namespace Commerce.Controllers
 {
     
     public class AllSecurityController : Controller
