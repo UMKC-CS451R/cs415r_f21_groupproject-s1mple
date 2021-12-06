@@ -22,7 +22,7 @@ namespace Commerce.Repository
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
         public virtual DbSet<LoginHistory> LoginHistories { get; set; }
-        public virtual DbSet<NotficationRule> NotficationRules { get; set; }
+        public virtual DbSet<NotificationRule> NotificationRules { get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<Transaction> Transactions { get; set; }
         public virtual DbSet<Trigger> Triggers { get; set; }
@@ -106,7 +106,7 @@ namespace Commerce.Repository
                     .HasConstraintName("FK__LoginHist__UserI__5812160E");
             });
 
-            modelBuilder.Entity<NotficationRule>(entity =>
+            modelBuilder.Entity<NotificationRule>(entity =>
             {
                 entity.HasKey(e => e.Nrid)
                     .HasName("PK__Notficat__E2F663718B163974");

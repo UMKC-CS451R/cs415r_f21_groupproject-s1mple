@@ -2,11 +2,11 @@
 @using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor HttpContextAccessor
 @{
-    ViewData["Title"] = "Managenofication";
+    ViewData["Title"] = "ManageNotifications";
     Layout = "~/Views/Shared/_Dashboard.cshtml";
 }
 
-<h1>Managenofication</h1>
+<h1>Manage Notifications</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -96,7 +96,7 @@
 }
 else
 {
-<p>No NotficationRule active</p>    
+<p>No NotificationRule active</p>    
 }
 
 <script>
@@ -134,12 +134,12 @@ $('#customSwitch4').on('change', function()
 { 
     $.ajax({
             type: "GET",
-             url: '@Url.Action("DeleteNotficationRule", "AllSecurity")',
+             url: '@Url.Action("DeleteNotificationRule", "AllSecurity")',
             data: {},
              dataType: "json",
              success: function (result)
              {
-                window.location.href = "/AllSecurity/Addnotifications";
+                window.location.href = "/AllSecurity/AddNotifications";
              },
             error: function ()
             {}
@@ -149,12 +149,12 @@ $('#customSwitch1').on('change', function()
 { 
     $.ajax({
             type: "GET",
-             url: '@Url.Action("DeleteNotficationRule", "AllSecurity")',
+             url: '@Url.Action("DeleteNotificationRule", "AllSecurity")',
             data: {},
              dataType: "json",
              success: function (result)
              {  
-                   window.location.href = "/AllSecurity/Addnotifications";
+                   window.location.href = "/AllSecurity/AddNotifications";
              },
             error: function ()
             {}

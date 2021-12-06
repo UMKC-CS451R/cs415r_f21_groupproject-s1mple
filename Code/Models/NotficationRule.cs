@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Commerce.Models
 {
-    [Table("NotficationRule")]
-    public partial class NotficationRule
+    [Table("NotificationRule")]
+    public partial class NotificationRule
     {
         [Key]
         [Column("NRid")]

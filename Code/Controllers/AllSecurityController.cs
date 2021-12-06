@@ -65,14 +65,14 @@ namespace Commerce.Controllers
             return View(list);
         }
         [HttpGet]
-        public IActionResult Addnotifications()
+        public IActionResult AddNotifications()
         {
 
             return View();
         }
-        public IActionResult Managenofication()
+        public IActionResult ManageNotifications()
         {
-            var dat = _Db.NotficationRules.Where(x => x.AccountNumber == HttpContext.Session.GetString("userid")).FirstOrDefault();
+            var dat = _Db.NotificationRules.Where(x => x.AccountNumber == HttpContext.Session.GetString("userid")).FirstOrDefault();
             if (dat != null)
             {
                 ViewBag.status = "data";
@@ -87,7 +87,7 @@ namespace Commerce.Controllers
             return View();
         }
     
-        public IActionResult notificationsPartial()
+        public IActionResult NotificationsPartial()
         {
             string acc = HttpContext.Session.GetString("userid");
             var list = _Db.Notifications.Where(x => x.AccNumber == acc).ToList();
@@ -97,9 +97,9 @@ namespace Commerce.Controllers
         public IActionResult UpdateLocation()
         {
             string acc = HttpContext.Session.GetString("userid");
-            var data = _Db.NotficationRules.Where(x => x.AccountNumber == acc).FirstOrDefault();
+            var data = _Db.NotificationRules.Where(x => x.AccountNumber == acc).FirstOrDefault();
             data.Locationstatus = false;
-            _Db.NotficationRules.Update(data);
+            _Db.NotificationRules.Update(data);
             _Db.SaveChanges();
             return Json(true);
 
@@ -107,19 +107,19 @@ namespace Commerce.Controllers
         public IActionResult UpdateTime()
         {
             string acc = HttpContext.Session.GetString("userid");
-            var data = _Db.NotficationRules.Where(x => x.AccountNumber == acc).FirstOrDefault();
+            var data = _Db.NotificationRules.Where(x => x.AccountNumber == acc).FirstOrDefault();
             data.TimeFrame = false;
-            _Db.NotficationRules.Update(data);
+            _Db.NotificationRules.Update(data);
             _Db.SaveChanges();
 
             return Json(true);
 
         }
-        public IActionResult DeleteNotficationRule()
+        public IActionResult DeleteNotificationRule()
         {
             string acc = HttpContext.Session.GetString("userid");
-            var data = _Db.NotficationRules.Where(x => x.AccountNumber == acc).FirstOrDefault();
-             _Db.NotficationRules.Remove(data);
+            var data = _Db.NotificationRules.Where(x => x.AccountNumber == acc).FirstOrDefault();
+             _Db.NotificationRules.Remove(data);
             _Db.SaveChanges();
 
             return Json("true");
@@ -131,11 +131,11 @@ namespace Commerce.Controllers
             _Db.Remove(notification);
             _Db.SaveChanges();
 
-            return RedirectToAction("notifications", "AllSecurity");
+            return RedirectToAction("Notifications", "AllSecurity");
         }
         public IActionResult Delete2(int id)
         {
-            var notificationRule = _Db.NotficationRules.Where(x => x.Nrid == id).FirstOrDefault();
+            var notificationRule = _Db.NotificationRules.Where(x => x.Nrid == id).FirstOrDefault();
             _Db.Remove(notificationRule);
             _Db.SaveChanges();
 
@@ -163,7 +163,7 @@ namespace Commerce.Controllers
             transaction.TransactionId = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
             _Db.Transactions.Add(transaction);
             _Db.SaveChanges();
-            var dat = _Db.NotficationRules.Where(x => x.AccountNumber == HttpContext.Session.GetString("userid")).FirstOrDefault();
+            var dat = _Db.NotificationRules.Where(x => x.AccountNumber == HttpContext.Session.GetString("userid")).FirstOrDefault();
             if (dat != null)
             {
                 string msg="";
@@ -193,28 +193,28 @@ namespace Commerce.Controllers
             return View("Index");
         }
         [HttpPost]
-        public IActionResult setnotfi(NotficationRule notficationRule)
+        public IActionResult SetNotification(NotificationRule notificationRule)
         {
             
-            notficationRule.AccountNumber = HttpContext.Session.GetString("userid");
-            if (notficationRule.Location != null)
+            notificationRule.AccountNumber = HttpContext.Session.GetString("userid");
+            if (notificationRule.Location != null)
             {
-                notficationRule.Locationstatus = true;
+                notificationRule.Locationstatus = true;
             }
             else 
             {
-                notficationRule.Locationstatus = false;
+                notificationRule.Locationstatus = false;
             }
-            if (notficationRule.StartTime != null && notficationRule.EndTime != null)
+            if (notificationRule.StartTime != null && notificationRule.EndTime != null)
             {
 
-                notficationRule.TimeFrame = true;
+                notificationRule.TimeFrame = true;
             }
             else
             {
-                notficationRule.TimeFrame = false;
+                notificationRule.TimeFrame = false;
             }
-            _Db.NotficationRules.Add(notficationRule);
+            _Db.NotificationRules.Add(notificationRule);
             _Db.SaveChanges();
             return RedirectToAction("Welcome","AllSecurity");
         }
